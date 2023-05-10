@@ -12,4 +12,9 @@
     <color name="mfp_loader_1">#E9BE23</color>
     <color name="mfp_loader_2">#4CBAFB</color>
     <color name="mfp_loader_3">#FC4C60</color>
+
+    <color name="color_e1e1e2">#e1e1e2</color>
+    <color name="color_ffffff">#ffffff</color>
+    <color name="color_92979a">#92979a</color>
+    <color name="color_7eb5e8">#7eb5e8</color>
 </resources>

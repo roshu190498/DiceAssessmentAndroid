@@ -1,5 +1,6 @@
 package com.example.diceassessmentandroid.home.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -17,6 +18,15 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel  @Inject constructor(private val homeRepository: HomeRepository) : ViewModel() {
 
+    var searchText = ""
+    set(value) {
+        handleSearch(value)
+    }
+
+    private fun handleSearch(str: String) {
+        Log.d("TAG_SEARCH",str)
+    }
+
     val searchApiResponse = MutableLiveData<ResponseData<SearchApiResponseModel>>()
     fun getTopHeadLine(searchQuery : String, sortBy :String , orderBy : String) {
         searchApiResponse.setLoading(null)
@@ -28,4 +38,7 @@ class HomeViewModel  @Inject constructor(private val homeRepository: HomeReposit
         }
     }
 
+    fun getSortByList() : ArrayList<String>{
+        return homeRepository.getSortingByList()
+    }
 }

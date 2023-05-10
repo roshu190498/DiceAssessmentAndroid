@@ -31,4 +31,16 @@ class HomeRepository @Inject constructor(private val homeApis: HomeApis) {
         }
 
     }
+
+    fun getSortingByList() : ArrayList<String>{
+        return arrayListOf<String>().apply {
+            add("Stars")
+            add("watchers count")
+            add("score")
+            add("name")
+            add("created_at")
+            add("updated_at")
+        }
+
+    }
 }

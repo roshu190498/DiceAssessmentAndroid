@@ -1,5 +1,6 @@
 package com.example.diceassessmentandroid.home.module
 
+import com.example.diceassessmentandroid.home.adapter.SortingByAdapter
 import com.example.diceassessmentandroid.home.api.HomeApis
 import dagger.Module
 import dagger.Provides
@@ -13,4 +14,7 @@ import retrofit2.Retrofit
 class HomeModules {
     @Provides
     fun providesHomeApis(retrofit: Retrofit) : HomeApis = retrofit.create(HomeApis::class.java)
+
+    @Provides
+    fun providesSortingAdapter() : SortingByAdapter = SortingByAdapter()
 }
