@@ -17,15 +17,22 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel  @Inject constructor(private val homeRepository: HomeRepository) : ViewModel() {
 
+    var searchText = ""
+    var sortByParam = "stars"
+    var orderBy = "desc"
+
     val searchApiResponse = MutableLiveData<ResponseData<SearchApiResponseModel>>()
-    fun getTopHeadLine(searchQuery : String, sortBy :String , orderBy : String) {
+    fun getTopHeadLine() {
         searchApiResponse.setLoading(null)
         viewModelScope.launch(Dispatchers.IO) {
             homeRepository.getSearchApiResponse(
-                searchQuery,sortBy,orderBy,
+                searchText,sortByParam,orderBy,
                 {success-> searchApiResponse.setSuccess(success)},
                 {error-> searchApiResponse.setError(error)})
         }
     }
 
+    fun getSortByList() : ArrayList<String>{
+        return homeRepository.getSortingByList()
+    }
 }
