@@ -1,6 +1,8 @@
 package com.example.diceassessmentandroid.home.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class SearchApiResponseModel (
     @SerializedName("total_count"        ) var totalCount        : Int?             = null,
@@ -8,7 +10,7 @@ data class SearchApiResponseModel (
     @SerializedName("items"              ) var items             : ArrayList<Items> = arrayListOf()
 )
 
-
+@Parcelize
 data class Owner (
     @SerializedName("login"               ) var login             : String?  = null,
     @SerializedName("id"                  ) var id                : Int?     = null,
@@ -28,27 +30,27 @@ data class Owner (
     @SerializedName("received_events_url" ) var receivedEventsUrl : String?  = null,
     @SerializedName("type"                ) var type              : String?  = null,
     @SerializedName("site_admin"          ) var siteAdmin         : Boolean? = null
-)
+):Parcelable
 
-
+@Parcelize
 data class License (
     @SerializedName("key"     ) var key    : String? = null,
     @SerializedName("name"    ) var name   : String? = null,
     @SerializedName("spdx_id" ) var spdxId : String? = null,
     @SerializedName("url"     ) var url    : String? = null,
     @SerializedName("node_id" ) var nodeId : String? = null
-)
+):Parcelable
 
-
+@Parcelize
 data class Permissions (
     @SerializedName("admin"    ) var admin    : Boolean? = null,
     @SerializedName("maintain" ) var maintain : Boolean? = null,
     @SerializedName("push"     ) var push     : Boolean? = null,
     @SerializedName("triage"   ) var triage   : Boolean? = null,
     @SerializedName("pull"     ) var pull     : Boolean? = null
-)
+):Parcelable
 
-
+@Parcelize
 data class Items (
     @SerializedName("id"                          ) var id                       : Int?              = null,
     @SerializedName("node_id"                     ) var nodeId                   : String?           = null,
@@ -131,4 +133,4 @@ data class Items (
     @SerializedName("default_branch"              ) var defaultBranch            : String?           = null,
     @SerializedName("permissions"                 ) var permissions              : Permissions?      = Permissions(),
     @SerializedName("score"                       ) var score                    : Int?              = null
-)
+) : Parcelable

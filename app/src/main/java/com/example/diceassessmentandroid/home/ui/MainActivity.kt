@@ -1,6 +1,7 @@
 package com.example.diceassessmentandroid.home.ui
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import com.example.diceassessmentandroid.home.adapter.SearchResponseAdapter
 import com.example.diceassessmentandroid.home.adapter.SortingByAdapter
 import com.example.diceassessmentandroid.home.model.Items
 import com.example.diceassessmentandroid.home.viewmodel.HomeViewModel
+import com.example.diceassessmentandroid.pdp.ui.PDPActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -98,7 +100,10 @@ class MainActivity : AppCompatActivity(),SortingByAdapter.SortByCallback,SearchR
         callSearchApi()
     }
 
-    override fun searchReponseCallback(str: Items, position: Int) {
-
+    override fun searchReponseCallback(data: Items, position: Int) {
+        val intent = Intent(this@MainActivity,PDPActivity::class.java).apply {
+            putExtra("DATA",data)
+        }
+        startActivity(intent)
     }
 }
