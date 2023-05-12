@@ -1,5 +1,6 @@
 package com.example.diceassessmentandroid.home.module
 
+import com.example.diceassessmentandroid.home.adapter.SearchResponseAdapter
 import com.example.diceassessmentandroid.home.adapter.SortingByAdapter
 import com.example.diceassessmentandroid.home.api.HomeApis
 import dagger.Module
@@ -17,4 +18,7 @@ class HomeModules {
 
     @Provides
     fun providesSortingAdapter() : SortingByAdapter = SortingByAdapter()
+
+    @Provides
+    fun providesSearchResponseAdapter() : SearchResponseAdapter = SearchResponseAdapter()
 }
