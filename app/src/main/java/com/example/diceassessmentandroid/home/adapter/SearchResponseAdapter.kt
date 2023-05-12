@@ -71,6 +71,6 @@ class SearchResponseAdapter : ListAdapter<Items, SearchResponseAdapter.ViewHolde
         }
     }
     interface SearchReponseCallback{
-        fun searchReponseCallback(str:Items,position: Int)
+        fun searchReponseCallback(data:Items,position: Int)
     }
 }
