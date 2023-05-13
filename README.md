@@ -27,11 +27,15 @@ API DOCS - >
         based on user query we have multiple scenario Error and SUCCESS
         please find attached screenshot for same 
 
-        ![](../../home1.png)![](../../home2.png)![](../../home3.png)![](../../home4.png)
+![home1](https://github.com/roshu190498/DiceAssessmentAndroid/assets/57613856/a314c4b5-7904-4cc3-9b33-cd64b2bc3f92)
         
 
     PDP Page : 
         Product Descripttion Page detail view for a repo selected
-        ![](../../pdp.png)
+
+    ![pdp](https://github.com/roshu190498/DiceAssessmentAndroid/assets/57613856/10efd1d4-459d-4a8b-b518-ffa254fe587c)
 
         Go to repo url by clicking know more
+    
+    Video walkthrough 
+    
