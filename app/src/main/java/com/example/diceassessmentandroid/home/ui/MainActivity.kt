@@ -73,18 +73,18 @@ class MainActivity : AppCompatActivity(),SortingByAdapter.SortByCallback,SearchR
             when (it.status) {
                 Status.SUCCESS-> {
                     it?.data?.items?.let {list->
+                        mBinding.shLoading.stopShimmer()
                         mBinding.vwForSearch.displayedChild  = 1
                         searchResponseAdapter.setDataToAdapter(list,this)
                     }
-                    progressDialog.dismiss()
                 }
                 Status.ERROR -> {
+                    mBinding.shLoading.stopShimmer()
                     mBinding.vwForSearch.displayedChild = 0
-                    progressDialog.dismiss()
                 }
                 Status.LOADING -> {
-                    mBinding.vwForSearch.displayedChild = 0
-                    progressDialog.show()
+                    mBinding.vwForSearch.displayedChild = 2
+                    mBinding.shLoading.startShimmer()
                 }
             }
         }

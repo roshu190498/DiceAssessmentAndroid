@@ -10,4 +10,4 @@ const val QAUERY_PARAM_SORT = "sort"
 const val QAUERY_PARAM_ORDER = "order"
 
 
-const val API_TOKEN = "Bearer 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"
+const val API_TOKEN = "Bearer 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"
